@@ -39,8 +39,9 @@
   }
 
   function normalizeFill(s) {
-    return String(s || "")
-      .trim()
+    let t = String(s || "").trim();
+    if (t.normalize) t = t.normalize("NFKC");
+    return t
       .replace(/\s+/g, "")
       .replace(/[，。．.,]/g, "")
       .toLowerCase();
@@ -232,7 +233,7 @@
     const ok = evaluate(q);
     if (ok) score++;
 
-    log.push({ id: q.id, ok: ok, prompt: q.prompt });
+    log.push({ id: q.id, ok: ok, prompt: q.prompt, correct: answerDisplay(q) });
 
     $("btn-submit").hidden = true;
     $("btn-next").hidden = false;
@@ -293,7 +294,7 @@
       .filter((x) => !x.ok)
       .forEach((x) => {
         const li = document.createElement("li");
-        li.textContent = "✗ " + x.prompt;
+        li.textContent = "✗ " + x.prompt + "　→　" + x.correct;
         wrong.appendChild(li);
       });
 

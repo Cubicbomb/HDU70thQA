@@ -1,13 +1,17 @@
 ---
 feature: hdu-70th-qa
-status: in-progress
-updated: 2026-07-07
+status: delivered
+updated: 2026-11-02
 source: main
 ---
 
 # HDU 70 周年知识问答（思政实践电子程序）
 
 ## Report
+
+**What was built** — 零构建静态闯关问答页：封面 → 单选/排序/填空三类题共 30 题 → 即时反馈与解析 → 得分与错题列表；题库史实来自杭电官网存档、维基交叉核对与课程实践安排表述；支持 HTTP 静态服务与 `file://` 直接打开。
+
+**Verification** — Node 题库结构校验 PASS（30 题、id 唯一、答案集合一致）；HTTP 资源 200；Headless Edge CDP E2E 全对路径 30/30、错答反馈、重答 PASS；`file://` 加载封面与题库 PASS；独立评审 PASS（0 critical）。
 
 ## [S1] Problem
 
@@ -95,11 +99,15 @@ HDU70thQA/
 
 ## Tasks
 
-- [ ] T1: 初始化 Git 工作区 — acceptance: 仓库存在于项目根，main 分支 (covers: S2.1)
-- [ ] T2: 编写规格文档 — acceptance: 本文档 status=designed 并提交 (covers: S1)
-- [ ] T3: 检索校史并编写题库 — acceptance: `data/questions.js` 含约 30 题，覆盖三类题型与三个 topic，史实可溯源 (covers: S2.3, S2.5)
-- [ ] T4: 实现闯关问答网页 — acceptance: 封面/答题/结果三态可走通；单选、排序、填空均可判定并显示解析 (covers: S2.2, S2.4, S2.6)
-- [ ] T5: 本地验证 — acceptance: 静态服务与 file 打开路径均验证通过，记入验证命令 (covers: S2.2)
-- [ ] T6: 独立评审并定稿 — acceptance: 评审无 critical；spec status=delivered
+- [x] T1: 初始化 Git 工作区 — acceptance: 仓库存在于项目根，main 分支 (covers: S2.1)
+- [x] T2: 编写规格文档 — acceptance: 本文档 status=designed 并提交 (covers: S1)
+- [x] T3: 检索校史并编写题库 — acceptance: `data/questions.js` 含约 30 题，覆盖三类题型与三个 topic，史实可溯源 (covers: S2.3, S2.5)
+- [x] T4: 实现闯关问答网页 — acceptance: 封面/答题/结果三态可走通；单选、排序、填空均可判定并显示解析 (covers: S2.2, S2.4, S2.6)
+- [x] T5: 本地验证 — acceptance: 静态服务与 file 打开路径均验证通过，记入验证命令 (covers: S2.2)
+- [x] T6: 独立评审并定稿 — acceptance: 评审无 critical；spec status=delivered
 
 ## Journey log
+
+- 官网 hdu.edu.cn 在本环境被 SSRF 策略拦截，改用 Wayback Machine 的《学校简介》《校史沿革》存档 + 维基交叉核对，课程实践安排提供校风/校训/精神基因权威表述。
+- 环境无 Playwright CLI/bash，改用系统 Edge headless + Node 原生 WebSocket 走 CDP 完成 E2E。
+- 评审建议（非关键）已采纳：fill 归一增加 NFKC、错题列表附正确答案、清理 .gitignore；保留「重答回封面」交互。

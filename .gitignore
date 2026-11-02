@@ -4,7 +4,5 @@ Desktop.ini
 .DS_Store
 
 # local temp
-*.log
 .tmp/
 output/
-*.log
