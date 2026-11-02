@@ -6,3 +6,5 @@ Desktop.ini
 # local temp
 *.log
 .tmp/
+output/
+*.log

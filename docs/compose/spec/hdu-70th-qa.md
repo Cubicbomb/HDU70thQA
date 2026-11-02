@@ -1,6 +1,6 @@
 ---
 feature: hdu-70th-qa
-status: designed
+status: in-progress
 updated: 2026-07-07
 source: main
 ---

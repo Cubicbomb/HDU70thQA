@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>杭州电子科技大学 70 周年知识问答</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-bg" aria-hidden="true"></div>
+    <main id="app" class="app">
+      <!-- 封面 -->
+      <section id="screen-cover" class="screen cover">
+        <div class="cover-badge" aria-hidden="true">
+          <span class="cover-70">70</span>
+          <span class="cover-years">1956 — 2026</span>
+        </div>
+        <p class="cover-kicker">杭州电子科技大学 · 建校七十周年</p>
+        <h1 class="cover-title">校庆知识问答</h1>
+        <p class="cover-sub">笃学力行 · 守正求新<br />团结勤奋 · 求实创新</p>
+        <p class="cover-meta" id="cover-meta">共 0 题 · 单选 / 排序 / 填空</p>
+        <button type="button" id="btn-start" class="btn btn-primary">开始答题</button>
+        <p id="cover-error" class="cover-error" hidden>题库加载失败，请确认 data/questions.js 存在后刷新。</p>
+      </section>
+
+      <!-- 答题 -->
+      <section id="screen-quiz" class="screen quiz" hidden>
+        <header class="quiz-top">
+          <div class="quiz-progress-label">
+            <span id="quiz-index">第 1 题</span>
+            <span class="quiz-topic" id="quiz-topic"></span>
+          </div>
+          <div class="quiz-progress" aria-hidden="true">
+            <div id="quiz-bar" class="quiz-bar"></div>
+          </div>
+        </header>
+        <h2 id="quiz-prompt" class="quiz-prompt"></h2>
+        <div id="quiz-body" class="quiz-body"></div>
+        <div id="quiz-feedback" class="quiz-feedback" hidden>
+          <p id="feedback-badge" class="feedback-badge"></p>
+          <p id="feedback-explain" class="feedback-explain"></p>
+        </div>
+        <footer class="quiz-actions">
+          <button type="button" id="btn-submit" class="btn btn-primary">提交答案</button>
+          <button type="button" id="btn-next" class="btn btn-primary" hidden>下一题</button>
+        </footer>
+      </section>
+
+      <!-- 结果 -->
+      <section id="screen-result" class="screen result" hidden>
+        <p class="result-kicker">答题完成</p>
+        <p class="result-score"><span id="result-correct">0</span><span class="result-total" id="result-total">/0</span></p>
+        <p class="result-rate" id="result-rate">正确率 0%</p>
+        <p class="result-comment" id="result-comment"></p>
+        <ul id="result-wrong" class="result-wrong"></ul>
+        <button type="button" id="btn-retry" class="btn btn-primary">再答一次</button>
+      </section>
+    </main>
+    <footer class="site-foot">
+      《中国近现代史纲要》思政实践 · 主题二「纪念杭州电子科技大学建校 70 周年」· 电子程序类成果
+    </footer>
+    <script src="data/questions.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
