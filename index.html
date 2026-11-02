@@ -4,25 +4,49 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>杭州电子科技大学 70 周年知识问答</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="page-bg" aria-hidden="true"></div>
+    <div class="page-emblem" aria-hidden="true">
+      <img src="assets/emblem-t.png" alt="" width="520" height="520" />
+    </div>
     <main id="app" class="app">
       <!-- 封面 -->
       <section id="screen-cover" class="screen cover">
+        <img
+          class="cover-emblem"
+          src="assets/emblem-t.png"
+          alt="杭州电子科技大学校徽"
+          width="120"
+          height="120"
+          decoding="async"
+        />
         <div class="cover-badge" aria-hidden="true">
           <span class="cover-70">70</span>
           <span class="cover-years">1956 — 2026</span>
         </div>
         <p class="cover-kicker">杭州电子科技大学 · 建校七十周年</p>
+        <img
+          class="cover-wordmark"
+          src="assets/wordmark-t.png"
+          alt="杭州电子科技大学 HANGZHOU DIANZI UNIVERSITY"
+          width="280"
+          height="66"
+          decoding="async"
+        />
         <h1 class="cover-title">校庆知识问答</h1>
         <p class="cover-sub">笃学力行 · 守正求新<br />团结勤奋 · 求实创新</p>
         <p class="cover-meta" id="cover-meta">共 0 题 · 单选 / 排序 / 填空</p>
-        <p class="cover-hint">建议先浏览校史与校园文化，再进入闯关答题。</p>
         <div class="cover-actions">
-          <a class="btn btn-primary" href="history.html">先看校史再答题</a>
-          <button type="button" id="btn-start" class="btn btn-ghost">直接开始答题</button>
+          <div class="cover-action">
+            <a class="btn btn-ghost" href="history.html">校史 · 文化</a>
+            <p class="cover-action-note">先来看看相关知识吧</p>
+          </div>
+          <div class="cover-action">
+            <button type="button" id="btn-start" class="btn btn-primary">开始答题</button>
+          </div>
         </div>
         <p id="cover-error" class="cover-error" hidden>题库加载失败，请确认 data/questions.js 存在后刷新。</p>
       </section>
@@ -31,11 +55,19 @@
       <section id="screen-quiz" class="screen quiz" hidden>
         <header class="quiz-top">
           <div class="quiz-progress-label">
+            <img
+              class="quiz-emblem"
+              src="assets/emblem-t.png"
+              alt=""
+              width="36"
+              height="36"
+              decoding="async"
+            />
             <div class="quiz-progress-meta">
               <span id="quiz-index">第 1 题</span>
               <span class="quiz-topic" id="quiz-topic"></span>
             </div>
-            <a class="quiz-exit" href="history.html">退出到介绍</a>
+            <a class="quiz-exit" href="history.html">再看看介绍？</a>
           </div>
           <div class="quiz-progress" aria-hidden="true">
             <div id="quiz-bar" class="quiz-bar"></div>
@@ -55,6 +87,14 @@
 
       <!-- 结果 -->
       <section id="screen-result" class="screen result" hidden>
+        <img
+          class="result-emblem"
+          src="assets/emblem-t.png"
+          alt=""
+          width="88"
+          height="88"
+          decoding="async"
+        />
         <p class="result-kicker">答题完成</p>
         <p class="result-score"><span id="result-correct">0</span><span class="result-total" id="result-total">/0</span></p>
         <p class="result-rate" id="result-rate">正确率 0%</p>
@@ -67,7 +107,15 @@
       </section>
     </main>
     <footer class="site-foot">
-      《中国近现代史纲要》思政实践 · 主题二「纪念杭州电子科技大学建校 70 周年」· 电子程序类成果
+      <img
+        class="foot-emblem"
+        src="assets/emblem-t.png"
+        alt=""
+        width="36"
+        height="36"
+        decoding="async"
+      />
+      <p>Copyright (c) 2026 Cubicbomb</p>
     </footer>
     <script src="data/questions.js"></script>
     <script src="app.js"></script>

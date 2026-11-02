@@ -139,6 +139,11 @@ body {
   font-weight: 600;
   padding: 14px 36px;
   border-radius: 999px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.25;
   transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
 }
 
@@ -150,6 +155,8 @@ body {
 .btn-primary {
   background: var(--navy);
   color: #fff;
+  /* 与 ghost 同宽描边，保证两钮等高 */
+  border: 1.5px solid var(--navy);
   box-shadow: 0 8px 20px rgba(11, 47, 94, 0.25);
 }
 
@@ -168,6 +175,11 @@ body {
   background: transparent;
   color: var(--navy);
   border: 1.5px solid var(--navy);
+  text-decoration: none;
+}
+
+.btn-ghost:hover {
+  text-decoration: none;
 }
 
 .btn-ghost:disabled {
@@ -185,12 +197,17 @@ body {
 .quiz-progress-label {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
   flex-wrap: wrap;
   gap: 12px;
   margin-bottom: 10px;
   font-size: 14px;
   color: var(--muted);
+}
+
+.quiz-progress-label .quiz-progress-meta {
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 .quiz-progress-meta {
@@ -522,6 +539,59 @@ body {
   color: var(--muted);
 }
 
+/* —— 校徽元素（来源：学校标志使用规范 · assets/） —— */
+.page-emblem {
+  position: fixed;
+  right: -60px;
+  bottom: -40px;
+  width: 420px;
+  height: 420px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.05;
+  filter: grayscale(10%);
+}
+
+.page-emblem img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.cover-emblem {
+  display: block;
+  margin: 0 auto 18px;
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 18px rgba(11, 47, 94, 0.12));
+}
+
+.cover-wordmark {
+  display: block;
+  margin: 0 auto 14px;
+  width: min(280px, 70%);
+  height: auto;
+  object-fit: contain;
+  opacity: 0.92;
+}
+
+.quiz-emblem {
+  flex: 0 0 auto;
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  margin-right: 4px;
+}
+
+.result-emblem {
+  display: block;
+  margin: 0 auto 16px;
+  width: 88px;
+  height: 88px;
+  object-fit: contain;
+}
+
 .site-foot {
   position: relative;
   z-index: 1;
@@ -531,19 +601,116 @@ body {
   padding: 8px 24px 28px;
 }
 
-/* —— 封面双入口 —— */
-.cover-hint {
-  margin: -12px 0 22px;
-  font-size: 13px;
-  color: var(--muted);
+.site-foot .foot-emblem {
+  display: block;
+  margin: 0 auto 8px;
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  opacity: 0.85;
 }
 
+.site-foot p {
+  margin: 0;
+}
+
+/* 历史页 hero 校徽 / 字标 */
+.h-hero-emblem {
+  position: absolute;
+  right: 36px;
+  top: 56px;
+  width: min(200px, 28vw);
+  height: auto;
+  opacity: 0.22;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.h-hero-wordmark {
+  display: block;
+  width: min(240px, 55%);
+  height: auto;
+  margin: 0 0 16px;
+  opacity: 0.9;
+  position: relative;
+  z-index: 1;
+  /* wordmark is blue art — lighten for navy hero via filter */
+  filter: brightness(0) invert(1);
+}
+
+/* 校训书法横幅 */
+.h-motto-banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  background: linear-gradient(180deg, rgba(11, 47, 94, 0.04), rgba(201, 162, 39, 0.08));
+  border: 1.5px solid rgba(11, 47, 94, 0.1);
+  border-radius: 14px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.h-motto-banner img:first-child {
+  width: min(348px, 70%);
+  height: auto;
+  object-fit: contain;
+}
+
+.h-motto-seal {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  opacity: 0.9;
+  flex: 0 0 auto;
+}
+
+.h-cta-emblem {
+  display: block;
+  margin: 0 auto 12px;
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+}
+
+.history-page .site-foot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+/* —— 封面双入口 —— */
 .cover-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 20px 28px;
   justify-content: center;
+  align-items: flex-start;
+}
+
+.cover-action {
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  gap: 10px;
+  min-width: 140px;
+}
+
+.cover-action .btn {
+  min-width: 148px;
+  min-height: 52px;
+}
+
+.cover-action-note {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--muted);
+  text-align: center;
+  max-width: 12em;
 }
 
 .quiz-exit {
@@ -992,6 +1159,17 @@ body {
     font-size: 30px;
   }
 
+  .cover-emblem {
+    width: 96px;
+    height: 96px;
+  }
+
+  .page-emblem {
+    width: 280px;
+    height: 280px;
+    opacity: 0.04;
+  }
+
   .quiz-prompt {
     font-size: 20px;
   }
@@ -1003,6 +1181,13 @@ body {
 
   .h-hero {
     padding: 24px 24px 40px;
+  }
+
+  .h-hero-emblem {
+    right: 16px;
+    top: 48px;
+    width: 120px;
+    opacity: 0.16;
   }
 
   .h-70 {
@@ -1020,5 +1205,11 @@ body {
   .h-motto-grid,
   .h-cards {
     grid-template-columns: 1fr;
+  }
+
+  .h-motto-banner {
+    flex-direction: column;
+    gap: 12px;
+    padding: 18px 16px;
   }
 }
