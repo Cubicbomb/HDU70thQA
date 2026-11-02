@@ -332,6 +332,16 @@
       resetRound();
       show("cover");
     });
+
+    // 介绍页「开始答题」→ index.html#start
+    if (window.location.hash === "#start") {
+      resetRound();
+      show("quiz");
+      renderQuiz();
+      if (window.history && window.history.replaceState) {
+        window.history.replaceState(null, "", window.location.pathname);
+      }
+    }
   }
 
   init();

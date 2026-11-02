@@ -514,6 +514,423 @@ body {
   padding: 8px 24px 28px;
 }
 
+/* —— 封面双入口 —— */
+.cover-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+.result-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.btn-sm {
+  font-size: 14px;
+  padding: 10px 22px;
+}
+
+/* —— 校史 / 校园文化介绍页 —— */
+.history-page .history {
+  position: relative;
+  z-index: 1;
+  width: min(920px, calc(100% - 48px));
+  margin: 32px auto 24px;
+}
+
+.h-hero {
+  background: var(--navy);
+  color: #f4f1e8;
+  border-radius: var(--radius);
+  padding: 28px 48px 52px;
+  box-shadow: var(--shadow);
+  margin-bottom: 28px;
+  position: relative;
+  overflow: hidden;
+}
+
+.h-hero::after {
+  content: "";
+  position: absolute;
+  right: -40px;
+  bottom: -60px;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 162, 39, 0.35), transparent 65%);
+  pointer-events: none;
+}
+
+.h-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  position: relative;
+  z-index: 1;
+}
+
+.h-link {
+  color: rgba(244, 241, 232, 0.85);
+  font-size: 14px;
+  text-decoration: none;
+  letter-spacing: 0.06em;
+}
+
+.h-link:hover {
+  color: var(--gold-soft);
+}
+
+.h-hero .btn-primary {
+  background: var(--gold);
+  color: var(--navy-deep);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.h-hero .btn-primary:hover:not(:disabled) {
+  background: var(--gold-soft);
+}
+
+.h-hero-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.h-70 {
+  font-family: var(--font-display);
+  font-size: 112px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  background: linear-gradient(165deg, var(--gold-soft), var(--gold) 45%, #9a7a12);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.h-years {
+  font-size: 13px;
+  letter-spacing: 0.35em;
+  color: var(--gold-soft);
+  font-weight: 600;
+}
+
+.h-kicker {
+  margin: 8px 0 6px;
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  color: rgba(244, 241, 232, 0.7);
+  position: relative;
+  z-index: 1;
+}
+
+.h-title {
+  margin: 0 0 14px;
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+.h-lead {
+  margin: 0;
+  max-width: 36em;
+  font-size: 15px;
+  line-height: 1.75;
+  color: rgba(244, 241, 232, 0.82);
+  position: relative;
+  z-index: 1;
+}
+
+.h-section {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 40px 48px;
+  margin-bottom: 24px;
+}
+
+.h-section-alt {
+  background: #fbfaf6;
+}
+
+.h-section-head {
+  margin-bottom: 28px;
+}
+
+.h-section-kicker {
+  margin: 0 0 6px;
+  font-size: 12px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.h-section-title {
+  margin: 0 0 8px;
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 0.08em;
+}
+
+.h-section-desc {
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* 时间线 */
+.h-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.h-timeline::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--navy), var(--gold));
+  opacity: 0.35;
+}
+
+.h-tl-item {
+  position: relative;
+  padding: 0 0 28px 36px;
+}
+
+.h-tl-item:last-child {
+  padding-bottom: 0;
+}
+
+.h-tl-dot {
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--card);
+  border: 3px solid var(--navy);
+  z-index: 1;
+}
+
+.h-tl-item-accent .h-tl-dot {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 4px rgba(201, 162, 39, 0.25);
+}
+
+.h-tl-year {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  background: rgba(201, 162, 39, 0.12);
+  padding: 2px 10px;
+  border-radius: 999px;
+  margin-bottom: 6px;
+}
+
+.h-tl-title {
+  margin: 0 0 6px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.h-tl-text {
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.75;
+  max-width: 40em;
+}
+
+.h-tl-text strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* 校训卡片 */
+.h-motto-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.h-motto-card {
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  padding: 28px 16px;
+  text-align: center;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.h-motto-card-gold {
+  border-color: rgba(201, 162, 39, 0.55);
+  background: linear-gradient(180deg, rgba(201, 162, 39, 0.1), #fff 70%);
+}
+
+.h-motto-label {
+  margin: 0 0 12px;
+  font-size: 12px;
+  letter-spacing: 0.28em;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.h-motto-text {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.45;
+  letter-spacing: 0.12em;
+}
+
+.h-motto-card-gold .h-motto-text {
+  color: #8a6d12;
+}
+
+.h-note {
+  margin: 20px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* 文化卡片 */
+.h-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.h-card {
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  background: #fbfaf7;
+  padding: 22px 20px;
+}
+
+.h-card-title {
+  margin: 0 0 10px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.h-card-text {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--muted);
+}
+
+.h-card-text strong {
+  color: var(--ink);
+}
+
+/* 成就列表 */
+.h-ach-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 18px;
+}
+
+.h-ach-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.h-ach-item:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.h-ach-mark {
+  flex: 0 0 auto;
+  width: 10px;
+  height: 10px;
+  margin-top: 8px;
+  border-radius: 2px;
+  background: var(--gold);
+  transform: rotate(45deg);
+}
+
+.h-ach-title {
+  margin: 0 0 4px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.h-ach-text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--muted);
+  max-width: 42em;
+}
+
+.h-ach-text strong {
+  color: var(--ink);
+}
+
+/* CTA */
+.h-cta {
+  text-align: center;
+  background: linear-gradient(180deg, #fff, rgba(11, 47, 94, 0.04));
+}
+
+.h-cta .h-section-head,
+.h-cta .h-section-desc {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.h-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 24px;
+}
+
 @media (max-width: 900px) {
   .app {
     width: min(100% - 32px, 860px);
@@ -534,5 +951,31 @@ body {
 
   .quiz-prompt {
     font-size: 20px;
+  }
+
+  .history-page .history {
+    width: min(100% - 32px, 920px);
+    margin-top: 20px;
+  }
+
+  .h-hero {
+    padding: 24px 24px 40px;
+  }
+
+  .h-70 {
+    font-size: 88px;
+  }
+
+  .h-title {
+    font-size: 28px;
+  }
+
+  .h-section {
+    padding: 28px 22px;
+  }
+
+  .h-motto-grid,
+  .h-cards {
+    grid-template-columns: 1fr;
   }
 }

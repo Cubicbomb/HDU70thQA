@@ -19,7 +19,10 @@
         <h1 class="cover-title">校庆知识问答</h1>
         <p class="cover-sub">笃学力行 · 守正求新<br />团结勤奋 · 求实创新</p>
         <p class="cover-meta" id="cover-meta">共 0 题 · 单选 / 排序 / 填空</p>
-        <button type="button" id="btn-start" class="btn btn-primary">开始答题</button>
+        <div class="cover-actions">
+          <button type="button" id="btn-start" class="btn btn-primary">开始答题</button>
+          <a class="btn btn-ghost" href="history.html">校史 · 文化</a>
+        </div>
         <p id="cover-error" class="cover-error" hidden>题库加载失败，请确认 data/questions.js 存在后刷新。</p>
       </section>
 
@@ -53,7 +56,10 @@
         <p class="result-rate" id="result-rate">正确率 0%</p>
         <p class="result-comment" id="result-comment"></p>
         <ul id="result-wrong" class="result-wrong"></ul>
-        <button type="button" id="btn-retry" class="btn btn-primary">再答一次</button>
+        <div class="result-actions">
+          <button type="button" id="btn-retry" class="btn btn-primary">再答一次</button>
+          <a class="btn btn-ghost" href="history.html">了解校史与校园文化</a>
+        </div>
       </section>
     </main>
     <footer class="site-foot">
