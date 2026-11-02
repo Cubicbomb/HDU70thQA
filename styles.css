@@ -63,20 +63,52 @@ body {
 /* —— 封面 —— */
 .cover {
   text-align: center;
-  padding-top: 56px;
+  padding-top: 48px;
 }
 
+/* 校徽 + 书法校名：横向一组学校标识 */
+.cover-brand {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.cover-emblem {
+  display: block;
+  flex: 0 0 auto;
+  width: 88px;
+  height: 88px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 18px rgba(11, 47, 94, 0.12));
+}
+
+.cover-wordmark {
+  display: block;
+  width: min(300px, 62%);
+  height: auto;
+  object-fit: contain;
+  opacity: 0.96;
+}
+
+/* 大号 70 主视觉 + 周年信息 */
 .cover-badge {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  gap: 10px;
   margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
 }
 
 .cover-70 {
   font-family: var(--font-display);
-  font-size: 120px;
+  font-size: 112px;
   font-weight: 700;
   line-height: 1;
   letter-spacing: -0.04em;
@@ -84,34 +116,61 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  text-shadow: 0 2px 0 rgba(11, 47, 94, 0.06);
 }
 
-.cover-years {
+.cover-badge-meta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px 12px;
   font-size: 13px;
-  letter-spacing: 0.35em;
-  color: var(--navy);
   font-weight: 600;
-}
-
-.cover-kicker {
-  margin: 8px 0 6px;
-  font-size: 14px;
-  letter-spacing: 0.2em;
   color: var(--muted);
 }
 
+.cover-years {
+  letter-spacing: 0.28em;
+  text-indent: 0.28em;
+  color: var(--navy);
+}
+
+.cover-badge-sep {
+  opacity: 0.5;
+}
+
+.cover-badge-text {
+  letter-spacing: 0.2em;
+  margin-right: -0.2em;
+  text-indent: 0.2em;
+}
+
+.cover-badge-rule {
+  display: block;
+  width: 36px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201, 162, 39, 0.8));
+  flex: 0 0 auto;
+}
+
+.cover-badge-rule-end {
+  background: linear-gradient(90deg, rgba(201, 162, 39, 0.8), transparent);
+}
+
 .cover-title {
-  margin: 0 0 16px;
+  margin: 2px 0 16px;
   font-family: var(--font-display);
   font-size: 42px;
   font-weight: 700;
   color: var(--navy);
   letter-spacing: 0.12em;
+  text-indent: 0.12em;
+  position: relative;
+  z-index: 1;
 }
 
 .cover-sub {
-  margin: 0 0 20px;
+  margin: 0 0 16px;
   color: var(--muted);
   font-size: 15px;
   letter-spacing: 0.15em;
@@ -558,24 +617,6 @@ body {
   object-fit: contain;
 }
 
-.cover-emblem {
-  display: block;
-  margin: 0 auto 18px;
-  width: 120px;
-  height: 120px;
-  object-fit: contain;
-  filter: drop-shadow(0 8px 18px rgba(11, 47, 94, 0.12));
-}
-
-.cover-wordmark {
-  display: block;
-  margin: 0 auto 14px;
-  width: min(280px, 70%);
-  height: auto;
-  object-fit: contain;
-  opacity: 0.92;
-}
-
 .quiz-emblem {
   flex: 0 0 auto;
   width: 36px;
@@ -624,18 +665,6 @@ body {
   opacity: 0.22;
   pointer-events: none;
   z-index: 0;
-}
-
-.h-hero-wordmark {
-  display: block;
-  width: min(240px, 55%);
-  height: auto;
-  margin: 0 0 16px;
-  opacity: 0.9;
-  position: relative;
-  z-index: 1;
-  /* wordmark is blue art — lighten for navy hero via filter */
-  filter: brightness(0) invert(1);
 }
 
 /* 校训书法横幅 */
@@ -711,6 +740,20 @@ body {
   color: var(--muted);
   text-align: center;
   max-width: 12em;
+}
+
+.quiz-exit-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+}
+
+.quiz-exit-divider {
+  width: 1px;
+  height: 12px;
+  background: rgba(17, 24, 39, 0.18);
+  flex: 0 0 auto;
 }
 
 .quiz-exit {
@@ -838,16 +881,41 @@ body {
 }
 
 .h-kicker {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
   margin: 8px 0 6px;
-  font-size: 14px;
-  letter-spacing: 0.2em;
-  color: rgba(244, 241, 232, 0.7);
+  font-size: 15px;
+  letter-spacing: 0.18em;
+  color: rgba(244, 241, 232, 0.72);
   position: relative;
   z-index: 1;
 }
 
+.h-kicker-wordmark {
+  display: block;
+  width: auto;
+  height: 34px;
+  flex: 0 0 auto;
+  object-fit: contain;
+  /* blue art → light on navy hero */
+  filter: brightness(0) invert(1);
+  opacity: 0.94;
+}
+
+.h-kicker-sep {
+  opacity: 0.75;
+  letter-spacing: 0;
+}
+
+.h-kicker-text {
+  letter-spacing: 0.22em;
+  margin-right: -0.22em;
+}
+
 .h-title {
-  margin: 0 0 14px;
+  margin: 4px 0 0;
   font-family: var(--font-display);
   font-size: 40px;
   font-weight: 700;
@@ -1159,9 +1227,31 @@ body {
     font-size: 30px;
   }
 
+  .cover-badge-meta {
+    gap: 8px;
+    font-size: 12px;
+  }
+
+  .cover-badge-rule {
+    width: 24px;
+  }
+
   .cover-emblem {
-    width: 96px;
-    height: 96px;
+    width: 64px;
+    height: 64px;
+  }
+
+  .cover-brand {
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+
+  .cover-wordmark {
+    width: min(220px, 58%);
+  }
+
+  .cover-sub {
+    font-size: 13px;
   }
 
   .page-emblem {
