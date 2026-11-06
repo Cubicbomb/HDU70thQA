@@ -126,8 +126,39 @@
         height="36"
         decoding="async"
       />
-      <p>Copyright (c) 2026 Cubicbomb</p>
+      <p>
+        <span>Copyright (c) 2026 Cubicbomb</span>
+        <span class="foot-sep" aria-hidden="true">·</span>
+        <span>26040521 崔佳乐</span>
+        <span class="foot-sep" aria-hidden="true">·</span>
+        <button type="button" id="btn-author-note" class="foot-link">作者的话</button>
+      </p>
     </footer>
+
+    <dialog id="author-note-dialog" class="author-note-dialog" aria-labelledby="author-note-title">
+      <div class="author-note-panel">
+        <header class="author-note-head">
+          <h2 id="author-note-title">作者的话</h2>
+          <button type="button" id="btn-author-close" class="author-note-close" aria-label="关闭">×</button>
+        </header>
+        <div class="author-note-body">
+          <p>这就是我的纲要课实践作业了。</p>
+          <p>因为要求中说「不接受完全以 AI 自动生成作业」，我觉得有必要为这个项目加上一些补充。</p>
+          <p>这个项目很大部分是使用 AI 搭建的，但在设计方面融入了很多我们自己的元素和风格，并没有完全丢给 AI 做。和 AI 一轮一轮对话、查看效果、一遍一遍测试、发现缺陷、提出优化方案、审核每次的改动，还是相当费时的。所以还是花了不少精力的。虽然看上去还是有很大 AI 味，但是很显然，搭建这样的一个项目，并不是向 AI 许个愿就能实现的。</p>
+          <p>我花了相当多的时间优化排版。也许这不止是一个问答程序，把他当作一个网页艺术作品也许更合适。</p>
+          <p>关于这个项目：</p>
+          <ul>
+            <li>创新性地添加了校史排序的小题目。</li>
+            <li>把杭电的校徽标志融入进去也是花了相当多的精力。</li>
+            <li>70 周年相关的标志没能找到官方文件，所以可能有所欠缺。</li>
+          </ul>
+          <p>使用 Mimo Desktop 构建，模型使用 Mimo-V2.6-Flash，词元消耗量约 30M。</p>
+          <p>仓库地址<a href="https://github.com/Cubicbomb/HDU70thQA" target="_blank" rel="noopener noreferrer">https://github.com/Cubicbomb/HDU70thQA</a></p>
+          <p class="author-note-sign">——26040521 崔佳乐</p>
+        </div>
+      </div>
+    </dialog>
+
     <script src="data/questions.js"></script>
     <script src="app.js"></script>
   </body>

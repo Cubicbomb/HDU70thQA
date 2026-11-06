@@ -1,0 +1,45 @@
+- generic:
+  - main:
+    - generic:
+      - generic [aria-hidden]:
+        - generic: "70"
+        - generic:
+          - generic: 1956 — 2026
+          - generic: ·
+          - generic: 建校七十周年
+      - heading [level=1]: 校庆知识问答
+      - paragraph: 笃学力行 · 守正求新 团结勤奋 · 求实创新
+      - paragraph: 共 30 题 · 单选 / 排序 / 填空
+      - generic:
+        - generic:
+          - link:
+            - /url: history.html
+            - text: 校史 · 文化
+          - paragraph: 先来看看相关知识吧
+        - generic:
+          - button: 开始答题
+  - contentinfo:
+    - paragraph:
+      - text: Copyright (c) 2026 Cubicbomb · 26040521 崔佳乐 ·
+      - button: 作者的话
+  - dialog [ref=e27]:
+    - generic [ref=e28]:
+      - banner [ref=e29]:
+        - heading "作者的话" [level=2] [ref=e30]
+        - button "关闭" [active] [ref=e31] [cursor=pointer]: ×
+      - generic [ref=e32]:
+        - paragraph [ref=e33]: 这就是我的纲要课实践作业了。
+        - paragraph [ref=e34]: 因为要求中说「不接受完全以 AI 自动生成作业」，我觉得有必要为这个项目加上一些补充。
+        - paragraph [ref=e35]: 这个项目很大部分是使用 AI 搭建的，但在设计方面融入了很多我们自己的元素和风格，并没有完全丢给 AI 做。和 AI 一轮一轮对话、查看效果、一遍一遍测试、发现缺陷、提出优化方案、审核每次的改动，还是相当费时的。所以还是花了不少精力的。虽然看上去还是有很大 AI 味，但是很显然，搭建这样的一个项目，并不是向 AI 许个愿就能实现的。
+        - paragraph [ref=e36]: 我花了相当多的时间优化排版。也许这不止是一个问答程序，把他当作一个网页艺术作品也许更合适。
+        - paragraph [ref=e37]: 关于这个项目：
+        - list [ref=e38]:
+          - listitem [ref=e39]: 创新性地添加了校史排序的小题目。
+          - listitem [ref=e40]: 把杭电的校徽标志融入进去也是花了相当多的精力。
+          - listitem [ref=e41]: 70 周年相关的标志没能找到官方文件，所以可能有所欠缺。
+        - paragraph [ref=e42]: 使用 Mimo Desktop 构建，模型使用 Mimo-V2.6-Flash，词元消耗量约 30M。
+        - paragraph [ref=e43]:
+          - text: 仓库地址
+          - link "https://github.com/Cubicbomb/HDU70thQA" [ref=e44] [cursor=pointer]:
+            - /url: https://github.com/Cubicbomb/HDU70thQA
+        - paragraph [ref=e45]: ——26040521 崔佳乐

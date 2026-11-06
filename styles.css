@@ -655,6 +655,118 @@ body {
   margin: 0;
 }
 
+.site-foot .foot-sep {
+  margin: 0 0.35em;
+  opacity: 0.7;
+}
+
+.site-foot .foot-link {
+  appearance: none;
+  border: 0;
+  background: none;
+  padding: 0;
+  font: inherit;
+  color: var(--navy);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+
+.site-foot .foot-link:hover,
+.site-foot .foot-link:focus-visible {
+  color: var(--gold);
+}
+
+/* 作者的话弹窗 */
+.author-note-dialog {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  max-width: min(560px, calc(100vw - 32px));
+  width: 100%;
+  color: var(--ink);
+}
+
+.author-note-dialog::backdrop {
+  background: rgba(7, 31, 66, 0.48);
+}
+
+.author-note-panel {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.author-note-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 22px 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.author-note-head h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.author-note-close {
+  appearance: none;
+  border: 0;
+  background: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  font-size: 22px;
+  line-height: 1;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.author-note-close:hover,
+.author-note-close:focus-visible {
+  background: rgba(11, 47, 94, 0.08);
+  color: var(--navy);
+}
+
+.author-note-body {
+  padding: 16px 22px 22px;
+  font-size: 14px;
+  line-height: 1.75;
+  max-height: min(62vh, 480px);
+  overflow: auto;
+}
+
+.author-note-body p {
+  margin: 0 0 0.85em;
+}
+
+.author-note-body ul {
+  margin: 0 0 0.85em;
+  padding-left: 1.2em;
+}
+
+.author-note-body li {
+  margin-bottom: 0.35em;
+}
+
+.author-note-body a {
+  color: var(--navy);
+  word-break: break-all;
+}
+
+.author-note-sign {
+  margin-top: 1.2em !important;
+  text-align: right;
+  color: var(--muted);
+}
+
 /* 历史页 hero 校徽 / 字标 */
 .h-hero-emblem {
   position: absolute;

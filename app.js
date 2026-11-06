@@ -310,7 +310,38 @@
       .replace(/"/g, "&quot;");
   }
 
+  function initAuthorNote() {
+    const dialog = $("author-note-dialog");
+    const openBtn = $("btn-author-note");
+    const closeBtn = $("btn-author-close");
+    if (!dialog || !openBtn || !closeBtn) return;
+
+    openBtn.addEventListener("click", () => {
+      if (typeof dialog.showModal === "function") {
+        dialog.showModal();
+      } else {
+        dialog.setAttribute("open", "");
+      }
+    });
+
+    closeBtn.addEventListener("click", () => {
+      if (typeof dialog.close === "function") {
+        dialog.close();
+      } else {
+        dialog.removeAttribute("open");
+      }
+    });
+
+    dialog.addEventListener("click", (e) => {
+      if (e.target === dialog) {
+        if (typeof dialog.close === "function") dialog.close();
+        else dialog.removeAttribute("open");
+      }
+    });
+  }
+
   function init() {
+    initAuthorNote();
     questions = loadQuestions();
     if (!questions) {
       $("cover-error").hidden = false;
